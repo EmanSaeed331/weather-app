@@ -1,0 +1,19 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "Weather app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmanSaeed331/wather-app.git"
+  },
+  "author": "Eman-Saeed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmanSaeed331/wather-app/issues"
+  },
+  "homepage": "https://github.com/EmanSaeed331/wather-app#readme"
+}
