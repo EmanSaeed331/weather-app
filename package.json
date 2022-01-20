@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/EmanSaeed331/wather-app/issues"
   },
-  "homepage": "https://github.com/EmanSaeed331/wather-app#readme"
+  "homepage": "https://github.com/EmanSaeed331/wather-app#readme",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
 }
