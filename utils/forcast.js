@@ -12,7 +12,7 @@ const forCast = (lat , lon , callback)=>{
 
         else{
             callback(undefined , {
-                lat:response.body, 
+                lat:response.body.lat, 
                 long:response.body
             
                 }
@@ -22,11 +22,7 @@ const forCast = (lat , lon , callback)=>{
 
     }) 
 }
-forCast(39,129 , (error,response) => {
-    console.log(response)
-    console.log(error)
-
-})
+module.exports = forCast
 
 
 
