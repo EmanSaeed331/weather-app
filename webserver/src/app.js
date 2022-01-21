@@ -1,27 +1,37 @@
 const path = require('path')
 const express = require('express')
+const hbs = require('hbs');
+const res = require('express/lib/response');
 console.log(__dirname);
+const app = express()
 console.log(path.join(__dirname,'../public'))
-const app =express()
 //To make express use the static page 
+//dynamic engine .
 const publicDirPath = path.join(__dirname,'../public')
+app.set('view engine','hbs')
 
 
-app.use(express.static(publicDirPath))
 
+//app.use(express.static(publicDirPath))
+app.set("views", ); 
 
-app.get('/',(request,response)=>{
-    response.send('<h1>Weather</h1>')
-
+app.get('', (req, res) => {
+    res.render('index', {
+        title: 'Weather app ',
+    })
 })
 app.get('/help',(request,response)=>{
-    response.send('Help Page !')
+    response.render('help',{
+        title:'Help ',
+        titletext:'This is help text '
+    })
 
 
 })
 app.get('/about',(request,response)=>{
-    response.send('<h1>About Page !</h1>')
-
+    response.render('about',{
+        name :'TEST'
+    })
 
 })
 app.get('/weather',(request,response)=>{
