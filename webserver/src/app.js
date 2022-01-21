@@ -5,6 +5,9 @@ console.log(path.join(__dirname,'../public'))
 const app =express()
 //To make express use the static page 
 const publicDirPath = path.join(__dirname,'../public')
+const helpDirPath = path.join(__dirname,'../public')
+const aboutDirPath = path.join(__dirname,'../public')
+
 app.use(express.static(publicDirPath))
 
 
@@ -14,10 +17,14 @@ app.get('/',(request,response)=>{
 })
 app.get('/help',(request,response)=>{
     response.send('Help Page !')
+    app.use(express.static(helpDirPath))
+
 
 })
 app.get('/about',(request,response)=>{
     response.send('<h1>About Page !</h1>')
+    app.use(express.static(aboutDirPath))
+
 
 })
 app.get('/weather',(request,response)=>{
