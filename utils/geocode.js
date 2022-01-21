@@ -12,8 +12,8 @@ const request = require('request')
             } else {
                 console.log('dddddddd')
                 callback(undefined, {
-                    latitude: response.body.features[0].center[0],
-                    longitude: response.body.features[0].center[1],
+                    latitude: response.body.features[0].center[1],
+                    longitude: response.body.features[0].center[0],
                     location: response.body.features[0].place_name
                 })
             }
