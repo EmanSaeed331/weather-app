@@ -18,6 +18,7 @@
   "homepage": "https://github.com/EmanSaeed331/wather-app#readme",
   "dependencies": {
     "express": "^4.17.2",
+    "hbs": "^4.2.0",
     "request": "^2.88.2"
   }
 }
