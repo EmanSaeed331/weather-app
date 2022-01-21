@@ -1,7 +1,7 @@
 const express = require('express')
 const app =express()
 app.get('/',(request,response)=>{
-    response.send('Hello Express !')
+    response.send('<h1>Weather</h1>')
 
 })
 app.get('/help',(request,response)=>{
@@ -9,11 +9,14 @@ app.get('/help',(request,response)=>{
 
 })
 app.get('/about',(request,response)=>{
-    response.send('About Page !')
+    response.send('<h1>About Page !</h1>')
 
 })
 app.get('/weather',(request,response)=>{
-    response.send('Weather Page !')
+    response.send({
+        forecast:'it is snowing ',
+        location:'Egypt'
+    })
 
 })
  app.listen(3000,(error,success)=>{
