@@ -1,5 +1,13 @@
+const path = require('path')
 const express = require('express')
+console.log(__dirname);
+console.log(path.join(__dirname,'../public'))
 const app =express()
+//To make express use the static page 
+const publicDirPath = path.join(__dirname,'../public')
+app.use(express.static(publicDirPath))
+
+
 app.get('/',(request,response)=>{
     response.send('<h1>Weather</h1>')
 
