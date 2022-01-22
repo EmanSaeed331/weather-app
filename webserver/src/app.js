@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs');
 const res = require('express/lib/response');
+const { response } = require('express');
 console.log(__dirname);
 const app = express()
 console.log(path.join(__dirname,'../public'))
@@ -45,6 +46,11 @@ app.get('/weather',(request,response)=>{
         forecast:'it is snowing ',
         location:'Egypt'
     })
+
+})
+app.get('*',(req,res)=>{
+
+    res.send('My 404 page')
 
 })
  app.listen(3000,(error,success)=>{
