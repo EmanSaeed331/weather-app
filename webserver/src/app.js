@@ -49,7 +49,11 @@ app.get('/weather',(request,response)=>{
 
 })
 app.get('/help/*',(req,res)=>{
-    res.send('Help articles not found')
+    res.render('404',{
+        title:'404',
+        errorMessage:'help articles not found ',
+        name:'Eman'
+    })
 })
 app.get('*',(req,res)=>{
 
