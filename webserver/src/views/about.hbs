@@ -2,14 +2,19 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet"  type="text/html"  href="public/css/styles.css"/>
-
+    <style> 
+            h1{
+                color:grey;
+            }
+        </style>
 
 </head>
 <body>
-    <h1> created by {{name}} </h1>
-    <img src="/public/images/robot.jpg"/>
-   
+    {{>header}}
+    <h2> created by {{name}} </h2>
+    <img src="./public/images/robot.jpg"
+    {{>footer}}
+
 
 </body>
 </html>

@@ -2,11 +2,16 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/html" href="./css/styles.css"/>
-
+     <style> 
+            h1{
+                color:grey;
+            }
+        </style>
 </head>
 <bod>
-    <h1>Help </h1>
-    <p>{{titletext}}</p>
+    {{>header}}
+    <h1>Help </h1> 
+    <h2>Created by {{name}}</h2>
+    {{>footer}}
 </bod>
 </html>

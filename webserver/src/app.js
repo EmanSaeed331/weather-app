@@ -8,29 +8,35 @@ console.log(path.join(__dirname,'../public'))
 //To make express use the static page 
 //dynamic engine .
 const publicDirPath = path.join(__dirname,'../public')
+const partialDirPath = path.join(__dirname,'./views/partials')
+
+//
 app.set('view engine','hbs')
+//app.set('views',viewPath); 
+app.use(express.static(publicDirPath))
+hbs.registerPartials(partialDirPath)
 
-
-
-//app.use(express.static(publicDirPath))
-app.set("views", ); 
-
-app.get('', (req, res) => {
+app.get('/index', (req, res) => {
     res.render('index', {
         title: 'Weather app ',
+        name:'Emma '
+
     })
 })
 app.get('/help',(request,response)=>{
     response.render('help',{
         title:'Help ',
-        titletext:'This is help text '
+        name:'Emma '
+
     })
 
 
 })
 app.get('/about',(request,response)=>{
     response.render('about',{
-        name :'TEST'
+        title:'About',
+        name:'Emma '
+
     })
 
 })
