@@ -16,17 +16,17 @@ app.set('view engine','hbs')
 app.use(express.static(publicDirPath))
 hbs.registerPartials(partialDirPath)
 
-app.get('/index', (req, res) => {
+app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather app ',
-        name:'Emma '
+        name:'Eman'
 
     })
 })
 app.get('/help',(request,response)=>{
     response.render('help',{
         title:'Help ',
-        name:'Emma '
+        name:'Eman '
 
     })
 
@@ -35,7 +35,7 @@ app.get('/help',(request,response)=>{
 app.get('/about',(request,response)=>{
     response.render('about',{
         title:'About',
-        name:'Emma '
+        name:'Eman '
 
     })
 
