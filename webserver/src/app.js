@@ -69,9 +69,6 @@ app.get('/weather',(request,response)=>{
                     })
                 })
         })
-      
-
-
 })
 app.get('/help/*',(req,res)=>{
     res.render('404',{
