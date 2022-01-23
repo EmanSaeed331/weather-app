@@ -19,7 +19,7 @@ hbs.registerPartials(partialDirPath)
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Weather app ',
+        title: 'Weather ',
         name:'Eman'
 
     })
