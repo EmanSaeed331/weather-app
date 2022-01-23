@@ -10,14 +10,27 @@
                 max-width: 650px;
                 margin: 0 auto;
                 padding: 0 16px ;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
 
             }
+            .main-content{
+                flex-grow:1;
+            }
+            
         </style>
 
 
     </head> 
     <body>
-        {{>header}}
+        <div class="main-content">       
+             {{>header}}
+             <p>Use this site to get your weather </p>
+
+
+
+        </div>
         {{>footer}}
 
 

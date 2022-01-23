@@ -2,17 +2,32 @@
 <html lang="en">
 
 <head>
-    <style> 
-            h1{
-                color:grey;
+   <style> 
+           
+            body{
+                color: #333333;
+                font-family: Arial, Helvetica, sans-serif;
+                max-width: 650px;
+                margin: 0 auto;
+                padding: 0 16px ;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+
+            }
+            .error-content{
+                flex-grow:1;
             }
         </style>
         <title>{{title}}</title>
 
 </head>
 <body>
+   <div class="error-content">
     {{>header}}
     <p>{{errorMessage}}</p>
+
+    </div>
     {{>footer}}
 
 

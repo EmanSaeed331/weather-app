@@ -2,14 +2,31 @@
 <html>
 
 <head>
-     <style> 
-            h1{
-                color:grey;
+    <title>help</title>
+             <style> 
+           
+            body{
+                color: #333333;
+                font-family: Arial, Helvetica, sans-serif;
+                max-width: 650px;
+                margin: 0 auto;
+                padding: 0 16px ;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+
+
+            }
+            .help-content{
+                flex-grow: 1;
             }
         </style>
 </head>
 <body>
+    <div class="help-content">
     {{>header}}
+
+    </div>
     {{>footer}}
 </body>
 </html>
