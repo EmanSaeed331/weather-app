@@ -20,6 +20,19 @@
             .main-content{
                 flex-grow:1;
             }
+            input{
+                border:1px solid #cccccc;
+                padding:8px ;
+
+            }
+            button{
+                cursor: pointer;
+                border: 1px solid #888888 ;
+                background: #888888;
+                color: white;
+                padding: 8px;
+
+            }
             
         </style>
 
@@ -33,6 +46,8 @@
                 <input placeholder="Location">
                 <button>Search</button>
             </form>
+            <p id='message-1'></p>
+            <p id='message-2'></p>
 
         </div>
         {{>footer}}
@@ -42,7 +57,11 @@
 
     const weatherForm = document.querySelector('form')
     const search = document.querySelector('input')
+    const messageOne = document.querySelector('#message-1')
+    const messageTwo = document.querySelector('#message-2')
 
+    messageOne.textContent = ''
+    messageTwo.textContent = ''
     weatherForm.addEventListener('submit',(event)=>{
     event.preventDefault() 
     const location = search.value
@@ -53,11 +72,20 @@
         if (data.error){
             
             console.log(data.error)
+            messageOne.textContent = data.error
 
         }
         else{
-            console.log(data.location)
+         
+            messageOne.textContent = data.location
+            const tempC = data.forecast.temp - 273.15
+
+            messageTwo.textContent = ' clouds ' + data.forecast.clouds + ' , '+
+            ' humidity ' +  data.forecast.humidity  +' , '+ ' pressure ' + data.forecast.pressure 
+            +' , '+   ' sunrise ' + data.forecast.sunrise + ' , '+' temp in Kelvin  ' + data.forecast.temp + ' , ' +' temp in Celsius' + tempC
+           // console.log(data.location)
             console.log(data.forecast)
+
         }
         })
 

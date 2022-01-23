@@ -21,7 +21,6 @@ app.set('view engine','hbs')
 //app.set('views',viewPath); 
 app.use(express.static(publicDirPath))
 hbs.registerPartials(partialDirPath)
-
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather ',
