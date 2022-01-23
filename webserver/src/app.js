@@ -5,6 +5,11 @@ const res = require('express/lib/response');
 const { response } = require('express');
 console.log(__dirname);
 const app = express()
+const forecast = require('./util/forcast.js')
+const geocode = require('./util/geocode.js')
+
+
+
 console.log(path.join(__dirname,'../public'))
 //To make express use the static page 
 //dynamic engine .
@@ -48,14 +53,24 @@ app.get('/weather',(request,response)=>{
                 error:'you must provide address !'
             }
         )}
-        console.log(request.query.address)
-        response.send({
-            address:request.query.address,
-            forecast:'it is snowing',
-            location :'location',
+        geocode(request.query.address, (error,{latitude,longitude,location})=>{
+                if(error){
+                    return response.send({error})
+                }
+                forecast(latitude,longitude , (error, forecastData) =>{
+                    if(error){
+                        return response.send({error})
+                    }
+                    response.send({
+                        forecast:forecastData.long.current,
+                        location,
+                        address:request.query.address
 
+                    })
+                })
         })
-  
+      
+
 
 })
 app.get('/help/*',(req,res)=>{
