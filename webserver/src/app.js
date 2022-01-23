@@ -42,10 +42,20 @@ app.get('/about',(request,response)=>{
 
 })
 app.get('/weather',(request,response)=>{
-    response.send({
-        forecast:'it is snowing ',
-        location:'Egypt'
-    })
+    if(!request.query.address){
+        return response.send(
+            {
+                error:'you must provide address !'
+            }
+        )}
+        console.log(request.query.address)
+        response.send({
+            address:request.query.address,
+            forecast:'it is snowing',
+            location :'location',
+
+        })
+  
 
 })
 app.get('/help/*',(req,res)=>{
