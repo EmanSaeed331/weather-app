@@ -25,25 +25,19 @@ app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather ',
         name:'Eman'
-
     })
 })
 app.get('/help',(request,response)=>{
     response.render('help',{
         title:'Help ',
         name:'Eman '
-
     })
-
-
 })
 app.get('/about',(request,response)=>{
     response.render('about',{
         title:'About',
         name:'Eman '
-
     })
-
 })
 app.get('/weather',(request,response)=>{
     if(!request.query.address){
@@ -64,7 +58,6 @@ app.get('/weather',(request,response)=>{
                         forecast:forecastData.long.current,
                         location,
                         address:request.query.address
-
                     })
                 })
         })
@@ -83,7 +76,6 @@ app.get('*',(req,res)=>{
         errorMessage:'Page not found',
         name:'Eman'
     })
-
 })
  app.listen(port,()=>{
      console.log('Server is in port '+ port);

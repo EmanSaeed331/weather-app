@@ -3,9 +3,7 @@
     <head>
         <title>Weather app </title>
                 <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/weather-2191838-1846632.png">
-
         <style> 
-           
             body{
                 color: #333333;
                 font-family: Arial, Helvetica, sans-serif;
@@ -15,7 +13,6 @@
                 display: flex;
                 flex-direction: column;
                 min-height: 100vh;
-
             }
             .main-content{
                 flex-grow:1;
@@ -31,17 +28,13 @@
                 background: #888888;
                 color: white;
                 padding: 8px;
-
             }
-            
         </style>
-
     </head> 
     <body>
         <div class="main-content">       
              {{>header}}
              <p>Use this site to get your weather </p>
-
             <form>
                 <input placeholder="Location">
                 <button>Search</button>
@@ -53,33 +46,26 @@
         {{>footer}}
 
             <script>
-
-
     const weatherForm = document.querySelector('form')
     const search = document.querySelector('input')
     const messageOne = document.querySelector('#message-1')
     const messageTwo = document.querySelector('#message-2')
-
     messageOne.textContent = ''
     messageTwo.textContent = ''
     weatherForm.addEventListener('submit',(event)=>{
     event.preventDefault() 
     const location = search.value
      console.log(location)
-
      fetch('/weather?address='+location).then((response)=>{
       response.json().then((data)=>{
         if (data.error){
             
             console.log(data.error)
             messageOne.textContent = data.error
-
         }
         else{
-         
             messageOne.textContent = data.location
             const tempC = data.forecast.temp - 273.15
-
             messageTwo.textContent = ' clouds ' + data.forecast.clouds + ' , '+
             ' humidity ' +  data.forecast.humidity  +' , '+ ' pressure ' + data.forecast.pressure 
             +' , '+   ' sunrise ' + data.forecast.sunrise + ' , '+' temp in Kelvin  ' + data.forecast.temp + ' , ' +' temp in Celsius' + tempC
@@ -88,11 +74,8 @@
 
         }
         })
-
     })
     })
     </script>
-
-
     </body>
 </html>
